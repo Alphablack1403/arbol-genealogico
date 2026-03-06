@@ -82,8 +82,36 @@ Se utiliza `html-to-image` para capturar el contenedor de React Flow y convertir
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## � Despliegue con Docker (Recomendado para otro PC)
 
--   **Frontend**: React 19, Vite, React Flow, Dagre, Lucide React (iconos).
+Si tienes Docker instalado, esta es la forma más rápida de correr el proyecto sin configurar Node.js ni bases de datos manualmente.
+
+### 1. Requisitos
+-   Tener instalado [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+### 2. Ejecución
+Desde la raíz del proyecto, ejecuta:
+```bash
+docker-compose up --build
+```
+
+Este comando hará lo siguiente por ti:
+1.  **Construirá** las imágenes tanto del frontend como del backend.
+2.  **Configurará** automáticamente las variables de entorno.
+3.  **Conectará** el frontend (`http://localhost:5173`) con el backend (`http://localhost:3000`).
+4.  **Mantendrá tus datos**: La base de datos `database.db` se sincroniza entre tu PC y el contenedor, por lo que no perderás a tus familiares al apagar Docker.
+
+### 3. Detener la aplicación
+Para apagar todo, usa `Ctrl + C` o ejecuta:
+```bash
+docker-compose down
+```
+
+---
+
+## �🛠️ Tecnologías Utilizadas
+
+-   **Frontend**: React 19, Vite, React Flow, Dagre, Lucide React.
 -   **Backend**: Node.js, Express, Better-SQLite3, JWT, Bcrypt.js.
+-   **Infraestructura**: Docker, Docker Compose.
 -   **Estilos**: CSS3 Moderno (Glassmorphism, Dark Mode).

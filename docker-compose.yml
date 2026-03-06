@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - JWT_SECRET=supersecretkeyformytree
+      - DATABASE_URL=database.db
+    volumes:
+      - ./backend/database.db:/app/database.db
+    restart: always
+
+  frontend:
+    build:
+      context: .
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: always
